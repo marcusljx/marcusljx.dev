@@ -1,0 +1,191 @@
+name: Marcus Low
+title: CV
+contact:
+  based_in: North California, USA
+  nationality: Singaporean
+  email: marcusljx@gmail.com
+education:
+  - institution: The University of Adelaide, Australia
+    degree: Honours Degree of Bachelor of Computer Science
+    years: 2012-2015
+    details:
+      - result: (78.75%) Second Upper Class
+      - thesis: 3D Surface Change Detection
+      - awards: The Google Prize for Honours Computer Science Highest marks in the Honours Degree of Bachelor of Computer Science
+  - institution: Seoul National University, South Korea
+    program: Exchange Program
+    year: 2014
+    details:
+      - project: Collaboration project with NAVER Labs (http://lab.naver.com/) Readability Module for the Higgs Web Engine
+  - institution: Temasek Polytechnic, Singapore
+    degree: Diploma in Integrated Facility Design and Management
+    years: 2006-2009
+    details:
+      - gpa: 3.02 of 4
+      - distinctions:
+        - Computer Aided Design and Building Specifications
+        - Human-centered Design and Ergonomics Space Planning Organisational Communication
+employment_history:
+  - company: Meta (formerly Facebook), USA
+    position: Software Engineer, Meta SuperIntelligence Labs (Infra)
+    dates: Apr 2022 - current
+    responsibilities:
+      - Led development of UI and webserver infrastructure for internal tools used by researchers and engineers across all of Meta's AI Training and Evaluations development teams.
+      - Also led and implemented the direction for best practices across React and GraphQL implementations across the UI/UX teams within the organization, along with server-side optimizations in practice.
+    technologies:
+      - React
+      - TypeScript
+      - FlowJS
+      - Hack(hacklang)
+      - Relay
+      - GraphQL
+      - Python
+      - Apache Thrift
+  - company: Meta (formerly Facebook), Singapore
+    position: Software Engineer (Commerce Engineering (Consumer Stores))
+    dates: Dec 2019 - Apr 2022
+    responsibilities:
+      - Built core infrastructure features used to refresh Facebook's Oculus and Portal marketing websites, including the revamp of the website in line with the release of the Oculus Quest 2 headset.
+      - Built code-less systems for creatives and marketing departments to assemble and build modern web experiences, and also built tools for code analysis and code generation that significantly improved develop-to-ship times within the various teams at Facebook.
+    technologies:
+      - Hack(hacklang)
+      - React (javascript)
+      - Relay
+      - GraphQL
+  - company: Grab, Singapore
+    position: Lead Software Engineer (Developer Experience - Automation Platform)
+    dates: Jan 2019 - Dec 2019
+    responsibilities:
+      - Led a sub-team of 6 in the development of in-house testing tools, libraries, backend services, and necessary infrastructure for testing microservices at scale, whilst also contributing as an active developer.
+      - Designed and implemented the tools and processes for functional, integration, and performance testing of Grab's backend microservices.
+      - Also served as interim team lead for the larger team of 13 from 2018.
+    technologies:
+      - Go
+      - Python
+      - Shell Script(Bash)
+      - OpenAPI (Swagger)
+      - Protobuf
+      - gRPC
+      - Elasticsearch
+      - MySQL
+      - Jenkins
+      - AWS
+      - Docker
+      - Kubernetes
+  - company: Grab, Singapore
+    position: Senior Software Development Engineer in Test
+    dates: Jan 2017 - Jan 2019
+    responsibilities:
+      - Spearheaded development of a full tech stack for automated integration and end-to-end testing of Grab's microservice architecture.
+      - Was promoted within 6 months to a technical leadership role in test strategy and test stack development.
+    technologies:
+      - Go
+      - Python
+      - Shell Script(Bash)
+      - OpenAPI (Swagger)
+      - Protobuf
+      - gRPC
+      - Elasticsearch
+      - MySQL
+      - Jenkins
+      - AWS
+      - Docker
+      - Kubernetes
+  - company: Acronis Asia Research and Development, Singapore
+    position: Software Engineer in Test
+    dates: Mar 2016 - Oct 2016
+    responsibilities:
+      - Development and maintenance of product testing framework and environments.
+      - Roles and responsibilities included testing architecture development for new product directions, as well as mentoring multiple teams of interns.
+    technologies:
+      - Python
+      - Go
+      - Batch Script
+      - NoSQL (ElasticSearch)
+  - company: University of Adelaide, Australia
+    position: Programming Tutor
+    dates: Jan 2014 - Dec 2015
+    responsibilities:
+      - Tutor for programming languages used in undergraduate courses taught by the University.
+    technologies:
+      - C
+      - C++
+      - MATLAB
+      - PHP
+  - company: University of Adelaide, Australia
+    position: MyUni Assist Amabassador
+    dates: Jan 2015 - Dec 2015
+    responsibilities:
+      - Front-end support for the University-wide Learning Management System.
+      - Responsibilities include organising software orientation sessions, as well as at-the-elbow support.
+    technologies:
+      - Blackboard Learning Management System
+  - company: Ministry of Education, Singapore
+    position: Relief Teacher, Mathematics
+    dates: 2006 - 2009
+    responsibilities:
+      - Ad-hoc Substitute Teacher for Mathematics in multiple Secondary Schools.
+    technologies:
+      - N.A.
+software_engineering_skills:
+  programming_languages_frameworks:
+    - Go, Go Templates
+    - Dart, Flutter
+    - Javascript (React, Flow)
+    - Hacklang, PHP
+    - Python
+    - Bash
+    - C, C++
+    - Java
+    - MATLAB
+    - shellscript (bash/batch)
+    - AutoHotkey - Macro/Scripting
+    - JavaScript/jQuery, Node.js HTML, CSS3
+  other_tools:
+    software_tools:
+      - JIRA
+      - Confluence
+      - SmartBear Collaborator
+      - Phabricator
+    ci_tools:
+      - GitLabCI
+      - CodeShip
+      - TravisCI
+      - Jenkins
+    cvs_tools:
+      - Subversion
+      - git
+      - mercurial
+      - BitBucket
+    web_crawler_systems:
+      - Kapow Web Crawler System
+    document_processing_systems:
+      - TEX
+leadership_positions:
+  - Technical Lead - Grab Engineering
+  - Intern Mentor - Grab Engineering
+  - Assistant Coach - Megaforce Taekwondo Club
+  - President - IFDM Welfare Club, Temasek Polytechnic
+  - Section Leader, Percussion - Temasek Wind Ensemble
+  - Executive Committee - Peer Support Group, Temasek Secondary School
+interests_other_skills:
+  languages:
+    - English
+    - Mandarin
+    - Korean
+    - Russian (very basic)
+  taekwondo: 4th Dan Blackbelt
+  orchestral_performance:
+    - Violin
+    - Piano
+    - Percussion/Timpani
+referees:
+  - name: Dr Tat-Jun Chin
+    company: University of Adelaide
+    position: SmartSat CRC Professorial Chair
+    contact: tjchin@cs.adelaide.edu.au
+    profile: cs.adelaide.edu.au/ssl/author/tat-jun-chin/
+  - name: Vitaly Pogosyan
+    company: Acronis Pte Ltd.
+    position: Team Lead
+    contact: pogosyanv@gmail.com
