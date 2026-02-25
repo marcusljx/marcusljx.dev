@@ -13,8 +13,11 @@ function App() {
     fetch('/resume.yml')
       .then(response => response.text())
       .then(text => {
-        const parsed = yaml.load(text);
+        const parsed = yaml.load(text) as any;
         setData(parsed);
+        if (parsed && parsed.name) {
+          document.title = parsed.name;
+        }
       })
       .catch(error => console.error("Error loading YAML:", error));
   }, []);
