@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fast-loading landing page built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is configured to deploy automatically to **GitHub Pages** whenever you push to the `main` branch or push a new git tag.
 
-## React Compiler
+### Custom Domain (Squarespace)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+To use your Squarespace domain with GitHub Pages:
 
-## Expanding the ESLint configuration
+1.  **GitHub Settings**:
+    *   Go to your repository on GitHub.
+    *   Settings > Pages.
+    *   Under **Custom domain**, enter your domain (e.g., `yourdomain.com`) and click Save.
+    *   Check **Enforce HTTPS** (it might take a few minutes to become available).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2.  **Squarespace DNS Settings**:
+    *   Log in to Squarespace > Domains > [Your Domain] > DNS Settings.
+    *   **A Records**: Add 4 A records pointing to GitHub's IPs:
+        *   `185.199.108.153`
+        *   `185.199.109.153`
+        *   `185.199.110.153`
+        *   `185.199.111.153`
+        *   Host: `@`
+    *   **CNAME Record**:
+        *   Host: `www`
+        *   Data: `[username].github.io` (replace `[username]` with your GitHub username).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tags
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To deploy a specific version:
+```bash
+git tag v1.0.0
+git push origin v1.0.0
 ```
+The CI will build the code at that tag and deploy it to GitHub Pages.
