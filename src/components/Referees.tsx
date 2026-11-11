@@ -15,13 +15,15 @@ interface RefereesProps {
 
 const Referees: React.FC<RefereesProps> = ({ referees }) => {
     return (
-        <section className="fade-up" style={{ paddingBottom: '6rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                <UserCheck size={28} color="var(--primary-blue)" />
-                <h2 style={{ margin: 0 }}>Referees</h2>
+        <section id="referees" className="resume-section" style={{ paddingBottom: '10rem' }}>
+            <div className="section-header-sticky">
+                <div className="section-header-inner">
+                    <UserCheck size={28} color="var(--primary-blue)" />
+                    <h2 className="section-title">Referees</h2>
+                </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            <div className="section-content" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
                 {referees.map((ref, index) => (
                     <div key={index} className="card fade-up">
                         <h3 style={{ fontSize: '1.15rem', color: 'var(--text-main)', marginBottom: '0.25rem' }}>{ref.name}</h3>

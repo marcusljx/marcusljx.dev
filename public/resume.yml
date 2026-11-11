@@ -4,6 +4,12 @@ contact:
   based_in: North California, USA
   nationality: Singaporean
   email: marcusljx@gmail.com
+awards:
+  - title: The Google Prize for Honours Computer Science 2015
+    issuer: Google
+    date: Apr 2016
+    associated_with: The University of Adelaide
+    description: This prize was established to recognise the student obtaining the highest mark in the Bachelor of Computer Science with Honours program in 2015 at The University of Adelaide, Australia.
 education:
   - institution: The University of Adelaide, Australia
     degree: Honours Degree of Bachelor of Computer Science
@@ -27,8 +33,22 @@ education:
         - Human-centered Design and Ergonomics Space Planning Organisational Communication
 employment_history:
   - company: Meta (formerly Facebook), USA
+    position: Software Engineer - Technical Lead, ML Experiences (Infra)
+    dates: Apr 2026 - current
+    responsibilities:
+      - Led strategy and hands-on development of agentic experiences and Prompt/Skill architecture across 50+ codebases for UI tools used by ML Researchers
+      - Developed cornerstone components for broad use in AI research tooling utilizing best-in-class technologies
+    technologies:
+      - WebGPU
+      - WebAssembly
+      - DuckDB
+      - Rust
+      - NextJS
+      - Vercel
+      - Google Cloud
+  - company: Meta (formerly Facebook), USA
     position: Software Engineer, Meta SuperIntelligence Labs (Infra)
-    dates: Apr 2022 - current
+    dates: Apr 2022 - Apr 2026
     responsibilities:
       - Led development of UI and webserver infrastructure for internal tools used by researchers and engineers across all of Meta's AI Training and Evaluations development teams.
       - Also led and implemented the direction for best practices across React and GraphQL implementations across the UI/UX teams within the organization, along with server-side optimizations in practice.
@@ -142,24 +162,28 @@ software_engineering_skills:
     - AutoHotkey - Macro/Scripting
     - JavaScript/jQuery, Node.js HTML, CSS3
   other_tools:
-    software_tools:
-      - JIRA
-      - Confluence
-      - SmartBear Collaborator
-      - Phabricator
+    cloud_platforms:
+      - Google Cloud (GCP)
+      - Cloud Run
+      - GKE
+    version_control:
+      - Subversion
+      - git
+      - mercurial
+      - BitBucket
     ci_tools:
       - GitLabCI
       - CodeShip
       - TravisCI
       - Jenkins
-    cvs_tools:
-      - Subversion
-      - git
-      - mercurial
-      - BitBucket
-    web_crawler_systems:
+    software_tools:
+      - JIRA
+      - Confluence
+      - SmartBear Collaborator
+      - Phabricator
+    web_crawling:
       - Kapow Web Crawler System
-    document_processing_systems:
+    document_processing:
       - TEX
 leadership_positions:
   - Technical Lead - Grab Engineering
@@ -173,7 +197,6 @@ interests_other_skills:
     - English
     - Mandarin
     - Korean
-    - Russian (very basic)
   taekwondo: 4th Dan Blackbelt
   orchestral_performance:
     - Violin

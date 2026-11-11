@@ -2,9 +2,12 @@ import { useEffect, useState } from 'react';
 import yaml from 'js-yaml';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
+import Awards from './components/Awards';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Referees from './components/Referees';
+import FloatingNav from './components/FloatingNav';
+import DownloadPdfButton from './components/DownloadPdfButton';
 
 function App() {
   const [data, setData] = useState<any>(null);
@@ -23,32 +26,58 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Intersection Observer for fade-up animations
     if (!data) return;
 
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
+    // Observer for section underline animation when entering view
+    const headerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          const title = entry.target.querySelector('.section-title');
+          if (entry.isIntersecting) {
+            title?.classList.add('is-visible');
+          } else {
+            title?.classList.remove('is-visible');
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }
+    );
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          // Optional: Unobserve after animating once
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+    // Observer for fade-up animations on cards and content
+    const fadeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }
+    );
 
     // Give React a tick to render DOM
-    setTimeout(() => {
+    const timer = setTimeout(() => {
+      const headers = document.querySelectorAll('.section-header-sticky');
+      headers.forEach(h => headerObserver.observe(h));
+
       const elements = document.querySelectorAll('.fade-up');
-      elements.forEach(el => observer.observe(el));
+      elements.forEach(el => fadeObserver.observe(el));
     }, 100);
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      headerObserver.disconnect();
+      fadeObserver.disconnect();
+    };
   }, [data]);
 
   if (!data) {
@@ -60,13 +89,16 @@ function App() {
   }
 
   return (
-    <div className="container fade-up">
+    <div className="container">
+      <FloatingNav />
+      <DownloadPdfButton />
       <Hero
         name={data.name}
         title={data.title}
         contact={data.contact}
       />
       <Experience history={data.employment_history} />
+      <Awards awards={data.awards} />
       <Education education={data.education} />
       <Skills
         skills={data.software_engineering_skills}

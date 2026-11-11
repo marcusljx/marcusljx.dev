@@ -7,10 +7,43 @@ interface SkillsProps {
     interests: any;
 }
 
+const formatCategoryTitle = (category: string): string => {
+    const titleMap: Record<string, string> = {
+        cvs_tools: 'Version Control',
+        version_control: 'Version Control',
+        web_crawler_systems: 'Web Crawling',
+        web_crawling: 'Web Crawling',
+        document_processing_systems: 'Document Processing',
+        document_processing: 'Document Processing',
+        cloud_platforms: 'Cloud Platforms',
+        cloud_infrastructure: 'Cloud Infrastructure',
+        cloud: 'Cloud',
+        ci_tools: 'CI / CD Tools',
+        ci_cd: 'CI / CD',
+        software_tools: 'Software Tools',
+    };
+
+    if (titleMap[category.toLowerCase()]) {
+        return titleMap[category.toLowerCase()];
+    }
+
+    return category
+        .replace(/_systems?$/i, '')
+        .replace(/_/g, ' ')
+        .replace(/\b\w/g, char => char.toUpperCase());
+};
+
 const Skills: React.FC<SkillsProps> = ({ skills, leadership, interests }) => {
     return (
-        <section className="fade-up">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+        <section id="skills" className="resume-section">
+            <div className="section-header-sticky">
+                <div className="section-header-inner">
+                    <Code size={28} color="var(--primary-blue)" />
+                    <h2 className="section-title">Skills</h2>
+                </div>
+            </div>
+
+            <div className="section-content" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
 
                 {/* Technical Skills */}
                 <div className="fade-up card">
@@ -32,8 +65,8 @@ const Skills: React.FC<SkillsProps> = ({ skills, leadership, interests }) => {
                         <h4 style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', textTransform: 'uppercase', marginBottom: '0.8rem' }}>Tools</h4>
                         {Object.entries(skills.other_tools).map(([category, tools]: [string, any], idx) => (
                             <div key={idx} style={{ marginBottom: '0.75rem' }}>
-                                <div style={{ fontSize: '0.8rem', color: 'var(--primary-blue)', marginBottom: '0.25rem', textTransform: 'capitalize' }}>
-                                    {category.replace('_', ' ')}
+                                <div style={{ fontSize: '0.8rem', color: 'var(--primary-blue)', marginBottom: '0.25rem', fontWeight: 600 }}>
+                                    {formatCategoryTitle(category)}
                                 </div>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
                                     {tools.map((t: string, i: number) => <span key={i} className="pill" style={{ fontSize: '0.75rem', padding: '0.2rem 0.6rem' }}>{t}</span>)}

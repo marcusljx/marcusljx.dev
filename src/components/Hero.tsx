@@ -13,14 +13,14 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ name, title, contact }) => {
   return (
-    <section className="fade-up" style={{ paddingTop: '6rem', paddingBottom: '4rem', textAlign: 'center' }}>
+    <section id="hero" className="hero-section fade-up" style={{ paddingTop: '6rem', paddingBottom: '4rem', textAlign: 'center' }}>
       <div className="hero-content">
         <h1 style={{ fontSize: '3.5rem', marginBottom: '0.5rem', color: 'var(--text-main)', fontWeight: 700 }}>
           {name}
         </h1>
-        <h2 style={{ fontSize: '1.5rem', color: 'var(--primary-blue)', marginBottom: '2rem', fontWeight: 500 }}>
+        <div className="hero-subtitle">
           {title}
-        </h2>
+        </div>
         
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', color: 'var(--text-secondary)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>

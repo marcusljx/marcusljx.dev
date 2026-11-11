@@ -16,13 +16,15 @@ interface EducationProps {
 
 const Education: React.FC<EducationProps> = ({ education }) => {
     return (
-        <section className="fade-up">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                <GraduationCap size={28} color="var(--primary-blue)" />
-                <h2 style={{ margin: 0 }}>Education</h2>
+        <section id="education" className="resume-section">
+            <div className="section-header-sticky">
+                <div className="section-header-inner">
+                    <GraduationCap size={28} color="var(--primary-blue)" />
+                    <h2 className="section-title">Education</h2>
+                </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            <div className="section-content" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
                 {education.map((edu, index) => (
                     <div key={index} className="card fade-up">
                         <h3 style={{ fontSize: '1.15rem', color: 'var(--text-main)', marginBottom: '0.5rem' }}>{edu.institution}</h3>

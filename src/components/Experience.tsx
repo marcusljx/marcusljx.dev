@@ -6,7 +6,7 @@ interface ExperienceItem {
     position: string;
     dates: string;
     responsibilities: string[];
-    technologies: string[];
+    technologies?: string[];
 }
 
 interface ExperienceProps {
@@ -15,13 +15,15 @@ interface ExperienceProps {
 
 const Experience: React.FC<ExperienceProps> = ({ history }) => {
     return (
-        <section className="fade-up">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                <Briefcase size={28} color="var(--primary-blue)" />
-                <h2 style={{ margin: 0 }}>Experience</h2>
+        <section id="experience" className="resume-section">
+            <div className="section-header-sticky">
+                <div className="section-header-inner">
+                    <Briefcase size={28} color="var(--primary-blue)" />
+                    <h2 className="section-title">Experience</h2>
+                </div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div className="section-content" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                 {history.map((job, index) => (
                     <div key={index} className="card fade-up" style={{ borderLeft: '4px solid var(--primary-blue)' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '1rem', gap: '1rem' }}>

@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build:pdf": "node scripts/generate-pdf.mjs",
+    "prebuild": "npm run build:pdf",
     "build": "tsc -b && vite build",
+    "postinstall": "node scripts/generate-pdf.mjs || true",
     "lint": "eslint .",
     "preview": "vite preview"
   },
